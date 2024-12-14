@@ -4,6 +4,7 @@ export const MENU_LINK = [
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
   { name: "Reviews", link: "/reviews" },
+  { name: "Contact", link: "/contact" },
 ];
 
 export const SOSMEDS = [

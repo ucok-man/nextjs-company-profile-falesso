@@ -34,7 +34,7 @@ function DesktopNav() {
             className="object-cover max-w-[250px] mx-auto"
           />
         </Link>
-        <ul className="flex items-center justify-end h-full w-full mr-4">
+        <ul className="flex items-center justify-end h-full w-full gap-x-8">
           <Iterate
             items={MENU_LINK}
             render={(item, idx) => (
@@ -42,7 +42,7 @@ function DesktopNav() {
                 <Button
                   variant="link"
                   className={cn(
-                    "text-xl text-white",
+                    "text-xl text-white p-0",
                     pathname === item.link && "text-bandicoot-800 scale-110"
                   )}
                 >
@@ -52,7 +52,7 @@ function DesktopNav() {
             )}
           />
         </ul>
-        <ul className="flex gap-x-2 mr-3">
+        <ul className="flex gap-x-4 ml-8 mr-3">
           <Iterate
             items={SOSMEDS}
             render={(item, idx) => (
