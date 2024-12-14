@@ -23,7 +23,7 @@ function DesktopNav() {
   const pathname = usePathname();
 
   return (
-    <section className="fixed max-lg:hidden w-full z-10">
+    <section className="fixed max-lg:hidden w-full z-20">
       <div className="p-4 flex justify-between items-center">
         <Link href="/" className="cursor-pointer">
           <Image
@@ -42,8 +42,8 @@ function DesktopNav() {
                 <Button
                   variant="link"
                   className={cn(
-                    "text-xl text-white p-0",
-                    pathname === item.link && "text-bandicoot-800 scale-110"
+                    "text-xl text-bone-100 p-0",
+                    pathname === item.link && "text-fuscous-800 scale-110"
                   )}
                 >
                   {item.name}
@@ -57,7 +57,7 @@ function DesktopNav() {
             items={SOSMEDS}
             render={(item, idx) => (
               <span
-                className="text-white text-sm p-2 rounded-full border cursor-pointer"
+                className="text-bone-100 text-sm p-2 rounded-full border cursor-pointer"
                 key={idx}
               >
                 <item.svg />
@@ -77,7 +77,7 @@ function MobileNav() {
   return (
     <section className="lg:hidden">
       {/* Navbar Header */}
-      <div className="fixed p-8 w-full flex justify-center items-center z-20">
+      <div className="fixed p-8 w-full flex justify-center items-center z-30">
         <Hamburger color="white" toggled={menuOpen} toggle={setMenuOpen} />
         <div className="grow">
           <Link href="/" className="cursor-pointer">
@@ -95,13 +95,13 @@ function MobileNav() {
       {/* Menu Overlay */}
       <div
         className={cn(
-          "fixed bg-bandicoot-500 inset-0 z-10",
+          "fixed bg-fuscous-500 inset-0 z-20",
           "transition-all duration-500 ease",
           "clip-path-circle-0",
           menuOpen && "clip-path-circle-full"
         )}
       >
-        <ul className="p-8 flex flex-col items-center justify-center h-full w-full gap-y-12">
+        <ul className="p-8 mt-10 flex flex-col items-center justify-center h-full w-full gap-y-10">
           <Iterate
             items={MENU_LINK}
             render={(item, idx) => (
@@ -109,8 +109,8 @@ function MobileNav() {
                 <Button
                   variant="link"
                   className={cn(
-                    "text-6xl text-white",
-                    pathname === item.link && "scale-125 text-bandicoot-800"
+                    "text-6xl text-bone-100",
+                    pathname === item.link && "scale-110 text-fuscous-800"
                   )}
                 >
                   {item.name}
@@ -124,7 +124,7 @@ function MobileNav() {
               items={SOSMEDS}
               render={(item, idx) => (
                 <span
-                  className="text-white text-2xl p-4 rounded-full border cursor-pointer"
+                  className="text-bone-100 text-2xl p-4 rounded-full border cursor-pointer"
                   key={idx}
                 >
                   <item.svg />

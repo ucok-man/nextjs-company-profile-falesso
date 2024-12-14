@@ -6,12 +6,18 @@ import React from "react";
 type Props = {
   isVideo?: boolean;
   media: any;
+  childPosition: "middle" | "bottom";
   children: React.ReactNode;
 };
 
-export default function Hero({ children, media, isVideo = false }: Props) {
+export default function Hero({
+  children,
+  childPosition,
+  media,
+  isVideo = false,
+}: Props) {
   return (
-    <section>
+    <section className="relative">
       <div className="w-full max-h-screen min-h-screen overflow-hidden">
         <If condition={isVideo}>
           <video
@@ -27,7 +33,9 @@ export default function Hero({ children, media, isVideo = false }: Props) {
           <Image src={media} alt="BG IMAGE" width={1920} height={1080} />
         </If>
       </div>
-      <div>{children}</div>
+      <If condition={childPosition === "bottom"}>
+        <div className="absolute z-10 bottom-20 w-full">{children}</div>
+      </If>
     </section>
   );
 }
