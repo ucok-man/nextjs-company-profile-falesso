@@ -101,7 +101,7 @@ function MobileNav() {
           menuOpen && "clip-path-circle-full"
         )}
       >
-        <ul className="p-8 mt-10 flex flex-col items-center justify-center h-full w-full gap-y-10">
+        <ul className="p-8 flex flex-col items-center justify-center h-full w-full gap-y-6">
           <Iterate
             items={MENU_LINK}
             render={(item, idx) => (
@@ -109,7 +109,7 @@ function MobileNav() {
                 <Button
                   variant="link"
                   className={cn(
-                    "text-6xl text-bone-100",
+                    "text-3xl md:text-4xl text-bone-100",
                     pathname === item.link && "scale-110 text-fuscous-800"
                   )}
                 >
