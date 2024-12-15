@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div>
-      <Hero isVideo media={"/hero/bg-video.mp4"} childPosition="bottom">
+      <Hero isVideo media={"/landing/bg-video.mp4"} childPosition="bottom">
         <div className="flex flex-col justify-center items-center text-bone-100">
           <div className="max-w-screen-sm">
             <div className="">

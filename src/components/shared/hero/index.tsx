@@ -30,11 +30,22 @@ export default function Hero({
           />
         </If>
         <If condition={!isVideo}>
-          <Image src={media} alt="BG IMAGE" width={1920} height={1080} />
+          <Image
+            src={media}
+            alt="BG IMAGE"
+            width={1920}
+            height={1080}
+            className="object-cover w-full h-full min-h-screen"
+          />
         </If>
       </div>
       <If condition={childPosition === "bottom"}>
         <div className="absolute z-10 bottom-20 w-full">{children}</div>
+      </If>
+      <If condition={childPosition === "middle"}>
+        <div className="absolute z-10 bottom-[calc(100vh-50%)] w-full">
+          {children}
+        </div>
       </If>
     </section>
   );
