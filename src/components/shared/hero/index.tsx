@@ -24,10 +24,10 @@ export default function Hero({
           <video
             className="w-full h-full min-h-screen object-cover"
             src={media}
-            // autoPlay
-            // loop
-            // muted
-            autoPlay={false}
+            autoPlay
+            loop
+            muted
+            // autoPlay={false}
           />
         </If>
         <If condition={!isVideo}>

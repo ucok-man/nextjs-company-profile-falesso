@@ -5,6 +5,11 @@ import { SERVICE_HOMES, SERVICE_LANDSCAPE } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Services",
+};
+
 export default function ServicesPage() {
   return (
     <div>

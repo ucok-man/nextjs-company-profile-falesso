@@ -6,6 +6,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Gallery",
+};
+
 export default function GalleryPage() {
   return (
     <div>

@@ -3,6 +3,11 @@ import Hero from "@/components/shared/hero";
 import { Iterate } from "@/components/utility";
 import { SOSMEDS } from "@/constant";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Contact",
+};
+
 export default function ContactPage() {
   return (
     <div>

@@ -43,6 +43,7 @@ export default function ContactForm() {
       title: `Message was sended`,
       description: "Keep eye on your email 😄",
     });
+    form.reset();
   };
 
   return (
