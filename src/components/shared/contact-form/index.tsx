@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -24,6 +25,8 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,8 +37,12 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onSubmit = (_values: z.infer<typeof formSchema>) => {
+    toast({
+      title: `Message was sended`,
+      description: "Keep eye on your email 😄",
+    });
   };
 
   return (

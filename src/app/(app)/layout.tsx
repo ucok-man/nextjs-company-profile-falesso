@@ -1,5 +1,6 @@
 import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";
+import { Toaster } from "@/components/ui/toaster";
 import React from "react";
 
 type Props = {
@@ -14,6 +15,7 @@ export default function AppLayout({ children }: Props) {
         {children}
         <Footer />
       </main>
+      <Toaster />
     </section>
   );
 }
