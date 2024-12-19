@@ -27,14 +27,14 @@ export default function HomePage() {
       </Hero>
 
       {/* About section */}
-      <section className="bg-bone-100  text-fuscous-700 h-[50vh]">
+      <section className="bg-bone-100  text-fuscous-700 h-[50vh] min-h-[700px]">
         <div className="h-full flex flex-col justify-center items-center gap-y-8">
           <h3 className="text-3xl tracking-loose max-w-screen-sm text-center leading-none">
             Our standard includes top-notch craftsmanship, elite design, premium
             materials, and flawless construction.
           </h3>
           <Link
-            href="/services"
+            href="/about"
             className="text-lg font-inter tracking-loose uppercase text-center underline underline-offset-4"
           >
             Our Story
@@ -43,7 +43,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-bone-50  text-fuscous-700 h-[100vh]">
+      <section className="bg-bone-50  text-fuscous-700 h-[100vh] min-h-[700px]">
         <div className="h-full flex flex-col justify-center items-center lg:gap-y-8">
           <h2 className="text-6xl tracking-loose max-w-screen-sm text-center leading-none">
             Our Services
@@ -81,7 +81,7 @@ export default function HomePage() {
           >
             <Button
               variant={"outline"}
-              className="bg-bone-50 hover:bg-fuscous-300"
+              className="bg-bone-50 hover:bg-fuscous-700 hover:text-bone-100 tracking-widest uppercase"
             >
               LEARN MORE
             </Button>
@@ -90,7 +90,7 @@ export default function HomePage() {
       </section>
 
       {/* Showcase Section */}
-      <section className="bg-fuscous-300  text-bone-100 h-[100vh]">
+      <section className="bg-fuscous-300  text-bone-100 h-[100vh] min-h-[700px]">
         <div className="w-full h-full grid grid-cols-12 grid-rows-12">
           <div className="col-start-8 col-end-13 row-start-1 row-end-5 overflow-hidden">
             <Image
@@ -131,7 +131,7 @@ export default function HomePage() {
           </div>
           <div className="col-start-6 col-end-11 md:col-end-9 row-start-7">
             <Link
-              href="/"
+              href="/gallery"
               className="text-lg md:text-2xl font-inter tracking-loose uppercase text-center underline underline-offset-4"
             >
               View Gallery
@@ -141,7 +141,7 @@ export default function HomePage() {
       </section>
 
       {/* Review Section */}
-      <section className="bg-bone-50  text-fuscous-700 h-[100vh]">
+      <section className="bg-bone-50  text-fuscous-700 h-[100vh] min-h-[700px]">
         <div className="h-full flex flex-col justify-center items-center lg:gap-y-8">
           <h2 className="text-6xl tracking-loose max-w-screen-sm text-center leading-none">
             Falesso Love
@@ -175,7 +175,7 @@ export default function HomePage() {
           >
             <Button
               variant={"outline"}
-              className="bg-bone-50 hover:bg-fuscous-300"
+              className="bg-bone-50 hover:bg-fuscous-700 hover:text-bone-100 tracking-widest uppercase"
             >
               More Review
             </Button>

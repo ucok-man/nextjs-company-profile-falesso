@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <section className="w-full h-screen">
+    <section className="w-full h-screen min-h-[700px]">
       <div className="h-1/2 flex flex-col justify-center items-center gap-y-8 bg-fuscous-700">
         <h3 className="text-3xl tracking-loose max-w-screen-sm text-center text-bone-200 leading-none">
           The Only Residential Construction Company in The Bay Area Doing
@@ -11,7 +11,7 @@ export default function Footer() {
           Experience.
         </h3>
         <Link
-          href="/contact"
+          href="/contact#contact"
           className="text-lg font-inter tracking-loose uppercase text-center text-bone-200 underline underline-offset-4"
         >
           Work With Us

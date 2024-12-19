@@ -1,7 +1,9 @@
 import Hero from "@/components/shared/hero";
+import { Button } from "@/components/ui/button";
 import { Iterate } from "@/components/utility";
 import { SERVICE_HOMES, SERVICE_LANDSCAPE } from "@/constant";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServicesPage() {
   return (
@@ -48,7 +50,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-bone-50  text-fuscous-700 p-12 pb-24 h-[1080px]">
+      <section className="bg-bone-50  text-fuscous-700 p-12 pb-24 h-[1080px] relative isolate">
         <div className="w-full h-full flex flex-col gap-y-12 lg:grid lg:grid-cols-12 lg:grid-rows-12">
           <div
             className="col-start-2 col-end-12 row-start-2 row-end-3 z-10
@@ -58,6 +60,18 @@ export default function ServicesPage() {
               Elevate Your Home with Felasso&apos;s{" "}
               <span className="italic">Expert Touch</span>
             </h2>
+            <Link
+              href={"/contact#contact"}
+              passHref
+              className="mt-12 flex items-center justify-center"
+            >
+              <Button
+                variant={"outline"}
+                className="bg-fuscous-700 text-base text-bone-50 hover:bg-bone-50 hover:text-fuscous-700 py-5 px-8 rounded-lg tracking-widest uppercase transition-all duration-300 ease-in-out"
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           <div className="col-start-9 col-end-13 row-start-1 row-end-6 overflow-hidden">

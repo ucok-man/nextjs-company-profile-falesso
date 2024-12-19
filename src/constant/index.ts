@@ -1,5 +1,64 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
+export const PROJECT_SHOW_CASE = [
+  {
+    title: "Modern Oasis Backyard",
+    short:
+      "A luxurious backyard transformation featuring a custom pool, fire pit, and lush landscaping.",
+    image: "/gallery/showcase-oasis.webp",
+  },
+  {
+    title: "Elegant Kitchen Redesign",
+    short:
+      "A stunning kitchen makeover with premium materials and functional European elegance.",
+    image: "/gallery/showcase-elegant-kitchen.jpg",
+  },
+  {
+    title: "Cozy Outdoor Living Space",
+    short:
+      "An outdoor living room complete with a fireplace, comfortable seating, and ambient lighting.",
+    image: "/gallery/showcase-outdor-space.jpg",
+  },
+  {
+    title: "Tranquil Garden Escape",
+    short:
+      "A serene garden featuring a water feature, natural stone pathways, and vibrant plants.",
+    image: "/gallery/showcase-garden.jpg",
+  },
+  {
+    title: "Luxury Bathroom Remodel",
+    short:
+      "A bathroom transformation with a spa-inspired design and modern fixtures.",
+    image: "/gallery/showcase-bathroom.jpg",
+  },
+  // {
+  //   title: "Innovative Home Office",
+  //   short:
+  //     "A contemporary home office with custom shelving, ergonomic design, and inspiring decor.",
+  //   image: "/gallery/showcase-home-office.jpg",
+  // },
+];
+
+export const COMPANY_VALUES = [
+  {
+    name: "Reliability",
+    description:
+      "The quality of being honest and having strong moral principles",
+  },
+  {
+    name: "Agility",
+    description: "Able to move quickly and easily",
+  },
+  {
+    name: "Integrity",
+    description:
+      "Consistently good in quality and performance; able to be counted on",
+  },
+];
+
+export const COMPANY_MISSION =
+  "Our aim is to deliver world-class design, top-quality materials, and flawless builds because we love bringing people’s dream homes to reality. We do this by controlling the whole process from design and material sourcing to building and finishing with our A-team of Lamassu craftsman.";
+
 export const SERVICE_LANDSCAPE = [
   {
     title: "DESIGN",
@@ -69,6 +128,7 @@ export const SERVICE_HOMES = [
 export const MENU_LINK = [
   { name: "About", link: "/about" },
   { name: "Services", link: "/services" },
+  { name: "Gallery", link: "/gallery" },
   { name: "Reviews", link: "/reviews" },
   { name: "Contact", link: "/contact" },
 ];

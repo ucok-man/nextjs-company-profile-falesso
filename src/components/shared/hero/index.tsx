@@ -6,7 +6,7 @@ import React from "react";
 type Props = {
   isVideo?: boolean;
   media: any;
-  childPosition: "middle" | "bottom";
+  childPosition: "middle" | "bottom" | "dynamic";
   children: React.ReactNode;
 };
 
@@ -18,6 +18,7 @@ export default function Hero({
 }: Props) {
   return (
     <section className="relative">
+      <div className="absolute inset-0 bg-black/40"></div>
       <div className="w-full max-h-screen min-h-screen overflow-hidden">
         <If condition={isVideo}>
           <video
@@ -44,6 +45,11 @@ export default function Hero({
       </If>
       <If condition={childPosition === "middle"}>
         <div className="absolute z-10 bottom-[calc(100vh-50%)] w-full">
+          {children}
+        </div>
+      </If>
+      <If condition={childPosition === "dynamic"}>
+        <div className="absolute z-10 max-sm:bottom-20 w-full bottom-[calc(100vh-50%)]">
           {children}
         </div>
       </If>

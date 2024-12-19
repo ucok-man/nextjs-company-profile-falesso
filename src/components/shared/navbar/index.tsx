@@ -8,23 +8,38 @@ import { Pivot as Hamburger } from "hamburger-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav className="font-arapey">
-      <DesktopNav />
-      <MobileNav />
+      <DesktopNav scrolled={isScrolled} />
+      <MobileNav scrolled={isScrolled} />
     </nav>
   );
 }
 
-function DesktopNav() {
+function DesktopNav({ scrolled }: { scrolled: boolean }) {
   const pathname = usePathname();
 
   return (
     <section className="fixed max-lg:hidden w-full z-20">
-      <div className="p-4 flex justify-between items-center">
+      <div
+        className={cn(
+          "p-4 py-2 flex justify-between items-center",
+          scrolled && "bg-fuscous-700 transition-all duration-700"
+        )}
+      >
         <Link href="/" className="cursor-pointer">
           <Image
             src={"/falesso-logo.png"}
@@ -43,7 +58,7 @@ function DesktopNav() {
                   variant="link"
                   className={cn(
                     "text-xl text-bone-100 p-0",
-                    pathname === item.link && "text-fuscous-800 scale-110"
+                    pathname === item.link && "underline underline-offset-4"
                   )}
                 >
                   {item.name}
@@ -60,7 +75,9 @@ function DesktopNav() {
                 className="text-bone-100 text-sm p-2 rounded-full border cursor-pointer"
                 key={idx}
               >
-                <item.svg />
+                <a href={item.url} target="_blank">
+                  <item.svg />
+                </a>
               </span>
             )}
           />
@@ -70,17 +87,26 @@ function DesktopNav() {
   );
 }
 
-function MobileNav() {
+function MobileNav({ scrolled }: { scrolled: boolean }) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
-    <section className="lg:hidden">
+    <section className={cn("lg:hidden")}>
       {/* Navbar Header */}
-      <div className="fixed p-8 w-full flex justify-center items-center z-30">
+      <div
+        className={cn(
+          "fixed p-8 py-4 w-full flex justify-center items-center z-30",
+          scrolled && "bg-fuscous-700 transition-all duration-700"
+        )}
+      >
         <Hamburger color="white" toggled={menuOpen} toggle={setMenuOpen} />
         <div className="grow">
-          <Link href="/" className="cursor-pointer">
+          <Link
+            href="/"
+            className="cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          >
             <Image
               src={"/falesso-logo.png"}
               alt="Logo"
@@ -101,12 +127,13 @@ function MobileNav() {
           menuOpen && "clip-path-circle-full"
         )}
       >
-        <ul className="p-8 flex flex-col items-center justify-center h-full w-full gap-y-6">
+        <ul className="p-8 flex flex-col items-center justify-center h-full w-full gap-y-6 min-h-[700px]">
           <Iterate
             items={MENU_LINK}
             render={(item, idx) => (
               <Link href={item.link} passHref key={idx}>
                 <Button
+                  onClick={() => setMenuOpen(false)}
                   variant="link"
                   className={cn(
                     "text-3xl md:text-4xl text-bone-100",
@@ -127,7 +154,9 @@ function MobileNav() {
                   className="text-bone-100 text-2xl p-4 rounded-full border cursor-pointer"
                   key={idx}
                 >
-                  <item.svg />
+                  <a href={item.url} target="_blank">
+                    <item.svg />
+                  </a>
                 </span>
               )}
             />

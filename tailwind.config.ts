@@ -10,6 +10,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animationDuration: {
+        "5000": "5000ms", // 5 seconds
+      },
+      animation: {
+        "infinite-scroll": "infinite-scroll 5s linear infinite",
+        "pulse-sm": "pulse-sm 2s ease-in-out infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        "pulse-sm": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.8" },
+        },
+      },
       fontFamily: {
         arapey: ["var(--font-arapey)"],
         inter: ["var(--font-inter)"],
@@ -46,6 +63,7 @@ const config: Config = {
           "900": "#46403d",
           "950": "#272321",
         },
+
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
